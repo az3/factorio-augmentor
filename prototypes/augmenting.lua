@@ -40,33 +40,33 @@ function generate_augmenting_recipe_icons_from_item(item)
     icons =
     {
       {
-        icon = "__quality__/graphics/icons/recycling.png"
+        icon = "__recycler__/graphics/icons/recycling.png"
       },
       {
         icon = item.icon,
         icon_size = item.icon_size,
-        scale = (0.5 * defines.default_icon_size / (item.icon_size or defines.default_icon_size)) * 0.8,
+        scale = (0.5 * defines.constant.default_icon_size / (item.icon_size or defines.constant.default_icon_size)) * 0.8,
       },
       {
-        icon = "__quality__/graphics/icons/recycling-top.png"
+        icon = "__recycler__/graphics/icons/recycling-top.png"
       },
     }
   else
     icons =
     {
       {
-        icon = "__quality__/graphics/icons/recycling.png"
+        icon = "__recycler__/graphics/icons/recycling.png"
       }
     }
     for i = 1, #item.icons do
       local icon = table.deepcopy(item.icons[i]) -- we are gonna change the scale, so must copy the table
-      icon.scale = ((icon.scale == nil) and (0.5 * defines.default_icon_size / (icon.icon_size or defines.default_icon_size)) or icon.scale) * 0.8
+      icon.scale = ((icon.scale == nil) and (0.5 * defines.constant.default_icon_size / (icon.icon_size or defines.constant.default_icon_size)) or icon.scale) * 0.8
       icon.shift = util.mul_shift(icon.shift, 0.8)
       icons[#icons + 1] = icon
     end
     icons[#icons + 1] =
     {
-      icon = "__quality__/graphics/icons/recycling-top.png"
+      icon = "__recycler__/graphics/icons/recycling-top.png"
     }
   end
   return icons
@@ -86,12 +86,12 @@ local function generate_self_augmenting_recipe(item)
       icon = nil,
       icons = icons,
       subgroup = item.subgroup,
-      category = "augmenting",
+      categories = {"augmenting"},
       hidden = true,
       enabled = true,
       unlock_results = false,
       ingredients = {{type = "item", name = item.name, amount = 1, ignored_by_stats = 1}},
-      results = {{type = "item", name = item.name, amount = 1, probability = settings.startup["augmentor-result-chance"].value / 100, ignored_by_stats = 1}}, -- Will show as consumed when item is destroyed
+      results = {{type = "item", name = item.name, amount = 1, independent_probability = settings.startup["augmentor-result-chance"].value / 100, ignored_by_stats = 1}}, -- Will show as consumed when item is destroyed
       energy_required = settings.startup["augmentor-base-crafting-speed"].value
     }
   })

@@ -1,4 +1,3 @@
-local sounds = require ("__augmentor__.prototypes.entity.augmentor-sounds")
 local graphics = require("__augmentor__.prototypes.entity.augmentor-pictures")
 local scale = graphics.scale
 data:extend{
@@ -13,7 +12,6 @@ data:extend{
       fast_replaceable_group = "augmentor",
       corpse = "medium-remnants",
       impact_category = "metal",
-      working_sound = sounds.augmentor,
       resistances =
       {
         {
@@ -48,4 +46,16 @@ data:extend{
       effect_receiver = { base_effect = { quality = settings.startup["augmentor-base-quality"].value / 10}}
     }
   }
-  
+
+local aug = data.raw.furnace["augmentor"]
+
+if mods["space-age"] then
+  local sounds = require ("__augmentor__.prototypes.entity.augmentor-sounds")
+  aug.working_sound = sounds.augmentor
+else
+  aug.working_sound = {
+    sound = { filename = "__base__/sound/assembling-machine-t3-1.ogg", volume = 0.45, audible_distance_modifier = 0.5 },
+    fade_in_ticks = 4,
+    fade_out_ticks = 20
+  }
+end

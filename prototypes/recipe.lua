@@ -10,7 +10,7 @@ data:extend(
 local ingredients
 local surface_conditions = nil
 
-if (mods["space-age"] ) then
+if (mods["space-age"]) then
   ingredients = {
     {type = "item", name = "processing-unit", amount = 20},
     {type = "item", name = "steel-plate", amount = 40},
@@ -27,7 +27,7 @@ if (mods["space-age"] ) then
       max = 99
     }
   }
-else 
+else
   ingredients = {
     {type = "item", name = "processing-unit", amount = 20},
     {type = "item", name = "steel-plate", amount = 40},

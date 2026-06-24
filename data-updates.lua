@@ -1,19 +1,21 @@
 local augmenting = require("prototypes.augmenting")
+local module_setting = settings.startup["augmentor-module-ban"].value
 
 for type_name in pairs(defines.prototypes.item) do
-  if data.raw[type_name] then
-    for k, item in pairs(data.raw[type_name]) do
-      if not data.raw.recipe[item.name .. "-augmenting"] then
-        if not string.find(item.name, "-barrel") then
-        augmenting.generate_self_augmenting_recipe(item)
+    if data.raw[type_name] then
+        if not (type_name == "module" and module_setting == true) then
+            for k, item in pairs(data.raw[type_name]) do
+                if not data.raw.recipe[item.name .. "-augmenting"] then
+                    if not string.find(item.name, "-barrel") then
+                        augmenting.generate_self_augmenting_recipe(item)
+                    end
+                end
+            end
         end
-      end
     end
-  end
 end
 
-table.insert(
-        data.raw.technology["recycling"].effects,
+table.insert(data.raw.technology["recycling"].effects,
         {
             type = "unlock-recipe",
             recipe = "augmentor"

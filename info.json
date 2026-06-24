@@ -2,23 +2,13 @@
     "name": "augmentor",
     "title": "Augmentor",
     "description": "A machine that has a chance to upgrade the quality of any item",
-
-    "version": "1.0.4",
-    "author": "khoa, cagricelebi",
+    "version": "1.0.5",
+    "author": "khoa, Crethor, cagricelebi",
     "factorio_version": "2.1",
-
     "quality_required": true,
-    "rail_bridges_required": false,
-    "space_travel_required": false,
-    "spoiling_required": false,
-    "freezing_required": false,
-    "segmented_units_required": false,
-    "expansion_shaders_required": false,
-
     "dependencies": [
         "base",
         "quality",
-        "recycler",
         "? space-age"
     ]
 }

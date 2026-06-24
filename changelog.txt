@@ -1,30 +1,31 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 2026-06-24
+  Info:
+    - New setting to ban modules from augmenting recipe generator. Thank you Crethor.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
-Date: 2026.06.23
+Date: 2026-06-23
   Info:
     - Added option to NOT include space-age DLC. Thank you Crethor & Dewrym.
-
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
-Date: 2026.06.23
+Date: 2026-06-23
   Info:
     - Updated for Factorio 2.1.
-
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
-Date: 2024. 12. 31
+Date: 2024-12-31
   Info:
     - Fix bugs with crafting speed
     - Make space-age truly optional, crafting ingredients and surface conditions are adjusted
-
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
-Date: 2024. 12. 20
+Date: 2024-12-20
   Info:
     - Added result chance
-
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
-Date: 2024. 12. 20
+Date: 2024-12-20
   Info:
     - Initial commit

@@ -90,6 +90,7 @@ local function generate_self_augmenting_recipe(item)
       hidden = true,
       enabled = true,
       unlock_results = false,
+      auto_recycle = false,
       ingredients = {{type = "item", name = item.name, amount = 1, ignored_by_stats = 1}},
       results = {{type = "item", name = item.name, amount = 1, independent_probability = settings.startup["augmentor-result-chance"].value / 100, ignored_by_stats = 1}}, -- Will show as consumed when item is destroyed
       energy_required = settings.startup["augmentor-base-crafting-speed"].value
